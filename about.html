@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目介绍 — 境启智创</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@350;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-header { background: linear-gradient(180deg,var(--surface-alt) 0%,var(--surface) 100%); }
+.about-intro { padding: var(--space-xl) 0 var(--space-2xl); }
+.about-intro__grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2xl); align-items:center; }
+.about-intro__text p { color:var(--text-secondary); line-height:1.8; margin-bottom:var(--space-md); font-size:var(--text-base); }
+.about-intro__img { width:100%; border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); }
+.about-intro__tags { display:flex; flex-wrap:wrap; gap:var(--space-sm); margin-top:var(--space-md); }
+.about-intro__tag { padding:8px 18px; border-radius:100px; font-size:var(--text-xs); font-weight:500; background:var(--green-100); color:var(--green-700); border:1px solid var(--green-200); }
+
+.timeline { padding:var(--space-2xl) 0; }
+.timeline__track { position:relative; max-width:var(--content-narrow); margin-inline:auto; }
+.timeline__track::before { content:''; position:absolute; left:20px; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--green-300),var(--green-600),var(--green-300)); }
+.timeline__item { position:relative; padding-left:56px; margin-bottom:var(--space-xl); }
+.timeline__item:last-child { margin-bottom:0; }
+.timeline__dot { position:absolute; left:12px; top:4px; width:18px; height:18px; border-radius:50%; background:var(--green-500); box-shadow:0 0 0 4px var(--green-100),0 0 12px oklch(58% 0.14 145/0.3); z-index:1; }
+.timeline__year { font-family:var(--font-display); font-size:var(--text-xl); font-weight:700; color:var(--green-600); margin-bottom:var(--space-xs); }
+.timeline__title { font-weight:600; color:var(--neutral-900); margin-bottom:var(--space-xs); font-size:var(--text-base); }
+.timeline__desc { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.7; }
+
+.vision { padding:var(--space-2xl) 0; }
+.vision__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-lg); }
+.vision-card { padding:var(--space-xl) var(--space-lg); border-radius:var(--radius-lg); background:white; box-shadow:var(--shadow-sm); text-align:center; border:1.5px solid var(--border-subtle); transition:border-color 300ms var(--ease-out-quart),box-shadow 300ms var(--ease-out-quart); }
+.vision-card:hover { border-color:var(--green-300); box-shadow:var(--shadow-md); }
+.vision-card__icon { width:56px; height:56px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-md); font-size:1.6rem; background:var(--green-100); }
+.vision-card__title { font-weight:600; font-size:var(--text-lg); color:var(--neutral-900); margin-bottom:var(--space-sm); }
+.vision-card__desc { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.7; }
+
+.organization { padding:var(--space-2xl) 0; background:var(--surface-alt); }
+.org-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-xl); }
+.org-card { background:white; border-radius:var(--radius-lg); padding:var(--space-xl); box-shadow:var(--shadow-sm); display:flex; gap:var(--space-lg); align-items:flex-start; transition:box-shadow 300ms var(--ease-out-quart); }
+.org-card:hover { box-shadow:var(--shadow-md); }
+.org-card__icon { width:52px; height:52px; border-radius:var(--radius-md); background:var(--green-100); display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+.org-card__role { font-family:var(--font-display); font-size:var(--text-lg); font-weight:600; color:var(--green-700); margin-bottom:var(--space-xs); }
+.org-card__title { font-weight:500; color:var(--neutral-900); margin-bottom:var(--space-sm); }
+.org-card__desc { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.7; }
+
+@media (max-width:1024px) {
+  .about-intro__grid { grid-template-columns:1fr; }
+  .vision__grid { grid-template-columns:1fr; }
+  .org-grid { grid-template-columns:1fr; }
+  .about-intro__img { max-width:480px; margin-inline:auto; }
+}
+@media (max-width:640px) {
+  .timeline__item { padding-left:44px; }
+  .timeline__track::before { left:14px; }
+  .timeline__dot { left:6px; width:18px; height:18px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">境启智创</a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">首页</a></li>
+      <li><a href="about.html" class="nav__link nav__link--active">项目介绍</a></li>
+      <li><a href="features.html" class="nav__link">核心产品</a></li>
+      <li><a href="cases.html" class="nav__link">合作案例</a></li>
+      <li><a href="team.html" class="nav__link">团队</a></li>
+      <li><a href="contact.html" class="nav__link">联系我们</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header__bg">
+    <div class="page-header__blob page-header__blob--1"></div>
+    <div class="page-header__blob page-header__blob--2"></div>
+  </div>
+  <div class="container page-header__content">
+    <p class="section__eyebrow">关于我们</p>
+    <h1 class="page-header__title">AI + 园艺文旅<br>一体化服务商</h1>
+    <p class="page-header__subtitle">常德科技职业技术学院 · 移动应用开发专业 孵化的创新创业项目</p>
+  </div>
+</header>
+
+<section class="about-intro">
+  <div class="container">
+    <div class="about-intro__grid">
+      <div class="about-intro__text reveal">
+        <p><strong>境启智创</strong>是一家以 AI 技术为核心驱动的园艺文旅一体化服务商，扎根于常德科技职业技术学院移动应用开发专业。我们聚焦"园艺文化 + 数字科技"的深度融合，为乡村景区、田园综合体、特色小镇提供从景观设计到文旅运营的全链路智能化解决方案。</p>
+        <p>当前常德区域内小众景区年均客流仅 6-10 万，二次消费占比 18%-25%，同质化严重、体验老旧、变现模式单一。境启智创以"AI 景观生成 + AR 互动导览 + 数字文创商城"三大核心产品，帮助景区降本增效、讲出属于自己的故事。</p>
+        <div class="about-intro__tags">
+          <span class="about-intro__tag">AI 景观设计</span>
+          <span class="about-intro__tag">AR 互动导览</span>
+          <span class="about-intro__tag">数字文创</span>
+          <span class="about-intro__tag">乡村振兴</span>
+          <span class="about-intro__tag">IP 活化</span>
+        </div>
+      </div>
+      <div class="reveal reveal--delay-1">
+        <img src="吉祥物.png" alt="境启智创 吉祥物 小滕AI" class="about-intro__img" width="500" height="500">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vision">
+  <div class="container">
+    <div class="section__header reveal">
+      <p class="section__eyebrow">使命与愿景</p>
+      <h2 class="section__title">以科技为引擎<br>助力乡村振兴</h2>
+    </div>
+    <div class="vision__grid">
+      <div class="vision-card reveal">
+        <div class="vision-card__icon">🌱</div>
+        <h3 class="vision-card__title">文化传承</h3>
+        <p class="vision-card__desc">挖掘常德在地乡土植物文脉，为古树、花木建立数字档案，让每一株植物都讲述自己的故事，守护地方文化基因。</p>
+      </div>
+      <div class="vision-card reveal reveal--delay-1">
+        <div class="vision-card__icon">🚀</div>
+        <h3 class="vision-card__title">科技赋能</h3>
+        <p class="vision-card__desc">以 AI 生成、AR 交互、大数据分析等前沿技术，为传统园艺与乡村文旅产业注入智能化动力，降本增效 70% 以上。</p>
+      </div>
+      <div class="vision-card reveal reveal--delay-2">
+        <div class="vision-card__icon">💰</div>
+        <h3 class="vision-card__title">产业振兴</h3>
+        <p class="vision-card__desc">打通"流量获取 → 互动体验 → 文创消费"闭环，提升复游率和二消占比，实现乡村文旅产业可持续变现。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="container">
+    <div class="section__header reveal">
+      <p class="section__eyebrow">发展历程</p>
+      <h2 class="section__title">从课堂到田野<br>一步一个脚印</h2>
+    </div>
+    <div class="timeline__track">
+      <div class="timeline__item reveal">
+        <div class="timeline__dot"></div>
+        <p class="timeline__year">2024 年 9 月</p>
+        <p class="timeline__title">项目立项启动</p>
+        <p class="timeline__desc">在常德科技职业技术学院移动应用开发专业教研室指导下，境启智创项目正式立项，聚焦 AI + 园艺文旅交叉领域。</p>
+      </div>
+      <div class="timeline__item reveal reveal--delay-1">
+        <div class="timeline__dot"></div>
+        <p class="timeline__year">2025 年 3 月</p>
+        <p class="timeline__title">MVP 产品研发</p>
+        <p class="timeline__desc">完成 AI 景观生成引擎、AR 导览小程序及数字文创商城三款核心产品的技术架构与最小可行版本开发。</p>
+      </div>
+      <div class="timeline__item reveal reveal--delay-2">
+        <div class="timeline__dot"></div>
+        <p class="timeline__year">2025 年 8 月</p>
+        <p class="timeline__title">首批试点落地</p>
+        <p class="timeline__desc">与无问东西·湖畔小院、女王手制达成合作，AI 景观方案部署上线，游客 AR 互动参与率达 78%。</p>
+      </div>
+      <div class="timeline__item reveal reveal--delay-3">
+        <div class="timeline__dot"></div>
+        <p class="timeline__year">2026 年 3 月</p>
+        <p class="timeline__title">规模化推广</p>
+        <p class="timeline__desc">合作企业突破 28 家，覆盖常德、长沙、张家界三地，全年预测营收 186 万元，品牌 IP"小滕AI"正式发布。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="organization">
+  <div class="container">
+    <div class="section__header reveal">
+      <p class="section__eyebrow">组织架构</p>
+      <h2 class="section__title">多角色协同<br>全链路服务</h2>
+    </div>
+    <div class="org-grid">
+      <div class="org-card reveal">
+        <div class="org-card__icon">💻</div>
+        <div>
+          <p class="org-card__role">技术研发组</p>
+          <p class="org-card__title">AI 引擎 & 多端开发</p>
+          <p class="org-card__desc">负责 AI 景观生成模型训练、AR 交互引擎、微信小程序及管理后台的开发迭代。</p>
+        </div>
+      </div>
+      <div class="org-card reveal reveal--delay-1">
+        <div class="org-card__icon">🎨</div>
+        <div>
+          <p class="org-card__role">设计创意组</p>
+          <p class="org-card__title">IP 视觉 & 文创策划</p>
+          <p class="org-card__desc">负责品牌 IP 形象设计（小滕AI）、景观美学规范制定、文创产品创意策划与视觉输出。</p>
+        </div>
+      </div>
+      <div class="org-card reveal reveal--delay-2">
+        <div class="org-card__icon">📊</div>
+        <div>
+          <p class="org-card__role">市场运营组</p>
+          <p class="org-card__title">商务拓展 & 用户增长</p>
+          <p class="org-card__desc">负责景区客户对接、政府合作、品牌推广及小程序用户增长与数据分析。</p>
+        </div>
+      </div>
+      <div class="org-card reveal reveal--delay-3">
+        <div class="org-card__icon">🔬</div>
+        <div>
+          <p class="org-card__role">园艺专家顾问</p>
+          <p class="org-card__title">知识库 & 品质把控</p>
+          <p class="org-card__desc">由常德本地园艺专家组成，为 AI 训练提供植物数据库标注及景观方案质量审核。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div><div class="footer__brand">境启智创</div><p class="footer__slogan">以科技为引擎，助力乡村振兴</p></div>
+    <div class="footer__links">
+      <a href="about.html" class="footer__link">常德科技职业技术学院</a>
+      <a href="about.html" class="footer__link">移动应用开发专业</a>
+      <span class="footer__link">© 2026 境启智创</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+var n=document.getElementById('nav'),st=false;window.addEventListener('scroll',function(){if(!st){requestAnimationFrame(function(){n.classList.toggle('nav--scrolled',window.scrollY>40);st=false});st=true}},{passive:true});
+document.querySelectorAll('.reveal').forEach(function(el){var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('reveal--visible');o.unobserve(en.target)}})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});o.observe(el)});
+})();
+</script>
+</body>
+</html>

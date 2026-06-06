@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>团队 — 境启智创</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@350;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-xl); padding:var(--space-2xl) 0; }
+.team-section-title { text-align:center; margin-top:var(--space-xl); margin-bottom:var(--space-xl); }
+.team-section-title h2 { font-family:var(--font-display); font-size:var(--text-xl); font-weight:600; color:var(--neutral-900); }
+.team-card { text-align:center; padding:var(--space-xl) var(--space-lg); border-radius:var(--radius-lg); background:white; box-shadow:var(--shadow-sm); border:1.5px solid var(--border-subtle); transition:transform 300ms var(--ease-out-quart),box-shadow 300ms var(--ease-out-quart),border-color 300ms var(--ease-out-quart); }
+.team-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--green-300); }
+.team-card__avatar { width:80px; height:80px; border-radius:50%; margin:0 auto var(--space-md); display:flex; align-items:center; justify-content:center; font-size:2rem; font-family:var(--font-display); font-weight:700; color:white; }
+.team-card__avatar--1 { background:linear-gradient(135deg,var(--green-400),var(--green-600)); }
+.team-card__avatar--2 { background:linear-gradient(135deg,oklch(60% 0.1 185),oklch(48% 0.1 185)); }
+.team-card__avatar--3 { background:linear-gradient(135deg,oklch(65% 0.1 160),oklch(50% 0.1 155)); }
+.team-card__avatar--4 { background:linear-gradient(135deg,oklch(60% 0.1 220),oklch(45% 0.1 210)); }
+.team-card__avatar--5 { background:linear-gradient(135deg,oklch(62% 0.1 130),oklch(48% 0.1 125)); }
+.team-card__avatar--6 { background:linear-gradient(135deg,oklch(58% 0.1 180),oklch(42% 0.1 175)); }
+.team-card__avatar--7 { background:linear-gradient(135deg,oklch(60% 0.1 80),oklch(45% 0.1 75)); }
+.team-card__avatar--8 { background:linear-gradient(135deg,oklch(62% 0.1 300),oklch(48% 0.1 295)); }
+.team-card__avatar--9 { background:linear-gradient(135deg,oklch(58% 0.1 40),oklch(42% 0.1 35)); }
+.team-card__name { font-size:var(--text-lg); font-weight:600; color:var(--neutral-900); margin-bottom:2px; }
+.team-card__role { font-size:var(--text-xs); font-weight:500; color:var(--green-600); margin-bottom:var(--space-md); letter-spacing:0.03em; text-transform:uppercase; }
+.team-card__bio { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.7; }
+.team-card__tags { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin-top:var(--space-md); }
+.team-card__tag { font-size:var(--text-xs); padding:3px 10px; border-radius:100px; background:var(--green-100); color:var(--green-700); }
+
+.mentor { padding:var(--space-2xl) 0; }
+.mentor-card { display:flex; align-items:center; gap:var(--space-xl); max-width:var(--content-narrow); margin-inline:auto; padding:var(--space-xl); border-radius:var(--radius-lg); background:var(--surface-alt); border:1.5px solid var(--green-200); }
+.mentor-card__avatar { width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg,var(--green-500),var(--green-700)); display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:white; flex-shrink:0; font-family:var(--font-display); font-weight:700; }
+.mentor-card__name { font-weight:600; font-size:var(--text-base); color:var(--neutral-900); }
+.mentor-card__title { font-size:var(--text-xs); color:var(--green-600); margin-bottom:var(--space-xs); }
+.mentor-card__desc { font-size:var(--text-sm); color:var(--text-secondary); line-height:1.7; }
+
+@media (max-width:1024px) {
+  .team-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:640px) {
+  .team-grid { grid-template-columns:1fr; }
+  .mentor-card { flex-direction:column; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">境启智创</a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">首页</a></li>
+      <li><a href="about.html" class="nav__link">项目介绍</a></li>
+      <li><a href="features.html" class="nav__link">核心产品</a></li>
+      <li><a href="cases.html" class="nav__link">合作案例</a></li>
+      <li><a href="team.html" class="nav__link nav__link--active">团队</a></li>
+      <li><a href="contact.html" class="nav__link">联系我们</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header__bg">
+    <div class="page-header__blob page-header__blob--1"></div>
+    <div class="page-header__blob page-header__blob--2"></div>
+  </div>
+  <div class="container page-header__content">
+    <p class="section__eyebrow">团队</p>
+    <h1 class="page-header__title">9 人跨学科团队</h1>
+    <p class="page-header__subtitle">技术 + 设计 + 运营 + 园艺，9 人跨学科协同创新</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card__avatar team-card__avatar--1">leo</div>
+        <p class="team-card__name">彭乐</p>
+        <p class="team-card__role">项目负责人 / AI 工程师</p>
+        <p class="team-card__bio">移动应用开发专业大三，主导 AI 景观生成模型 LoRA 训练与全栈架构设计。曾获湖南省大学生创新创业大赛银奖。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">PyTorch</span><span class="team-card__tag">FastAPI</span><span class="team-card__tag">项目管理</span>
+        </div>
+      </div>
+      <div class="team-card reveal reveal--delay-1">
+        <div class="team-card__avatar team-card__avatar--2">Nya</div>
+        <p class="team-card__name">滕之珩</p>
+        <p class="team-card__role">园艺设计师</p>
+        <p class="team-card__bio">数字媒体技术专业，负责品牌 VI、吉祥物"小滕AI"形象设计及小程序 UI 设计。作品多次入选花瓣网设计精选。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">Figma</span><span class="team-card__tag">AR</span><span class="team-card__tag">IP 设计</span>
+        </div>
+      </div>
+      <div class="team-card reveal reveal--delay-2">
+        <div class="team-card__avatar team-card__avatar--3">唐</div>
+        <p class="team-card__name">唐飞</p>
+        <p class="team-card__role">程序工程师</p>
+        <p class="team-card__bio">精通微信小程序云开发与 AR 引擎接入，负责 AR 导览小程序及数字文创商城的全流程开发与上线运营。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">小程序</span><span class="team-card__tag">Blender</span><span class="team-card__tag">云开发</span>
+        </div>
+      </div>
+      <div class="team-card reveal reveal--delay-1">
+        <div class="team-card__avatar team-card__avatar--4">淼</div>
+        <p class="team-card__name">李淼</p>
+        <p class="team-card__role">后端开发工程师</p>
+        <p class="team-card__bio">负责管理后台、数据中台及 API 网关开发，保障系统高可用与可扩展性。熟悉微服务架构与容器化部署。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">Go</span><span class="team-card__tag">K8s</span><span class="team-card__tag">MySQL</span>
+        </div>
+      </div>
+      <div class="team-card reveal reveal--delay-2">
+        <div class="team-card__avatar team-card__avatar--5">符</div>
+        <p class="team-card__name">符文静</p>
+        <p class="team-card__role">市场运营</p>
+        <p class="team-card__bio">电子商务专业，负责景区客户拓展、商务洽谈及品牌传播。已促成 15+ 家景区合作签约，擅长乡村旅游新媒体运营。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">BD 拓展</span><span class="team-card__tag">新媒体</span><span class="team-card__tag">数据分析</span>
+        </div>
+      </div>
+      <div class="team-card reveal reveal--delay-3">
+        <div class="team-card__avatar team-card__avatar--6">李</div>
+        <p class="team-card__name">李陈琳</p>
+        <p class="team-card__role">园艺顾问</p>
+        <p class="team-card__bio">园艺技术专业，负责植物知识库建设与 AI 训练数据标注。持有高级园艺师资格证书，熟悉常德本土植物 200+ 种。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">植物学</span><span class="team-card__tag">数据标注</span><span class="team-card__tag">景观设计</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section-title reveal">
+      <h2>运营与支持团队</h2>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card__avatar team-card__avatar--7">龙</div>
+        <p class="team-card__name">龙志华</p>
+        <p class="team-card__role">摄影摄像</p>
+        <p class="team-card__bio">负责场地拍摄、场景分析与视觉素材制作，为 AI 训练和宣传推广提供高质量影像素材。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">摄影</span><span class="team-card__tag">场景分析</span><span class="team-card__tag">后期处理</span>
+        </div>
+      </div>
+      <div class="team-card reveal reveal--delay-1">
+        <div class="team-card__avatar team-card__avatar--8">龙</div>
+        <p class="team-card__name">龙洁英</p>
+        <p class="team-card__role">财务顾问</p>
+        <p class="team-card__bio">负责项目财务预测、成本核算与资金管理，制定商业计划书中的财务模型与盈利分析。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">会计</span><span class="team-card__tag">财务预测</span><span class="team-card__tag">成本分析</span>
+        </div>
+      </div>
+      <div class="team-card reveal reveal--delay-2">
+        <div class="team-card__avatar team-card__avatar--9">卿</div>
+        <p class="team-card__name">卿豪</p>
+        <p class="team-card__role">公司运营</p>
+        <p class="team-card__bio">常德故事文创园创始人，拥有多项创业奖项及丰富的创业经历，负责项目整体运营与资源对接。</p>
+        <div class="team-card__tags">
+          <span class="team-card__tag">运营</span><span class="team-card__tag">创业</span><span class="team-card__tag">资源对接</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section-title reveal">
+      <h2>指导老师</h2>
+    </div>
+
+    <div class="mentor">
+      <div class="mentor-card reveal">
+        <div class="mentor-card__avatar">何</div>
+        <div>
+          <p class="mentor-card__name">何筱璇</p>
+          <p class="mentor-card__title">指导老师 · 常德科技职业技术学院</p>
+          <p class="mentor-card__desc">园艺设计专业教师，多次指导学生获得创新创业比赛及设计类比赛奖项，负责园艺方案品质审核。</p>
+        </div>
+      </div>
+    </div>
+    <div class="mentor">
+      <div class="mentor-card reveal reveal--delay-1">
+        <div class="mentor-card__avatar">陈</div>
+        <div>
+          <p class="mentor-card__name">陈贺文</p>
+          <p class="mentor-card__title">指导老师 · 常德科技职业技术学院</p>
+          <p class="mentor-card__desc">移动应用开发专业教师，持有多项软件著作权与丰富开发经验，负责前后端技术架构指导。</p>
+        </div>
+      </div>
+    </div>
+    <div class="mentor">
+      <div class="mentor-card reveal reveal--delay-2">
+        <div class="mentor-card__avatar">杨</div>
+        <div>
+          <p class="mentor-card__name">杨多伟</p>
+          <p class="mentor-card__title">指导老师 · 常德科技职业技术学院</p>
+          <p class="mentor-card__desc">计算机专业教师，负责微信小程序开发指导及多项技能培训，为项目提供全栈技术支撑。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div><div class="footer__brand">境启智创</div><p class="footer__slogan">以科技为引擎，助力乡村振兴</p></div>
+    <div class="footer__links">
+      <a href="about.html" class="footer__link">常德科技职业技术学院</a>
+      <a href="about.html" class="footer__link">移动应用开发专业</a>
+      <span class="footer__link">© 2026 境启智创</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+var n=document.getElementById('nav'),st=false;window.addEventListener('scroll',function(){if(!st){requestAnimationFrame(function(){n.classList.toggle('nav--scrolled',window.scrollY>40);st=false});st=true}},{passive:true});
+document.querySelectorAll('.reveal').forEach(function(el){var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('reveal--visible');o.unobserve(en.target)}})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});o.observe(el)});
+})();
+</script>
+</body>
+</html>

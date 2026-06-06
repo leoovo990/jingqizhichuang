@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>核心产品 — 境启智创</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@350;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.feature-block { padding:var(--space-2xl) 0; }
+.feature-block--alt { background:var(--surface-alt); }
+.feature-block__grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2xl); align-items:center; }
+.feature-block__grid--reverse .feature-block__visual { order:-1; }
+.feature-block__number { font-family:var(--font-display); font-size:4rem; font-weight:700; color:var(--green-200); line-height:1; margin-bottom:var(--space-sm); }
+.feature-block__title { font-family:var(--font-display); font-size:var(--text-2xl); font-weight:600; color:var(--neutral-900); margin-bottom:var(--space-md); line-height:1.2; letter-spacing:-0.02em; }
+.feature-block__desc { font-size:var(--text-base); color:var(--text-secondary); line-height:1.8; margin-bottom:var(--space-lg); }
+.feature-block__highlights { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-md); }
+.feature-highlight { padding:var(--space-md); border-radius:var(--radius-md); background:var(--green-100); }
+.feature-highlight__label { font-size:var(--text-xs); font-weight:500; color:var(--green-700); margin-bottom:4px; }
+.feature-highlight__value { font-weight:600; color:var(--neutral-900); font-size:var(--text-base); }
+.feature-block__visual { position:relative; border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-lg); }
+.feature-block__visual img { width:100%; display:block; }
+.feature-block__visual--mockup { background:linear-gradient(135deg,var(--green-100),oklch(92% 0.04 185)); display:flex; align-items:center; justify-content:center; min-height:360px; }
+.feature-block__visual-text { text-align:center; padding:var(--space-xl); }
+.feature-block__visual-icon { font-size:4rem; margin-bottom:var(--space-md); }
+
+.tech-stack { padding:var(--space-2xl) 0; }
+.tech-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-lg); }
+.tech-card { text-align:center; padding:var(--space-xl) var(--space-md); border-radius:var(--radius-lg); background:white; border:1.5px solid var(--border-subtle); transition:border-color 300ms var(--ease-out-quart),transform 300ms var(--ease-out-quart); }
+.tech-card:hover { border-color:var(--green-300); transform:translateY(-4px); }
+.tech-card__icon { width:48px; height:48px; border-radius:var(--radius-md); background:var(--green-100); display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-md); font-size:1.3rem; }
+.tech-card__name { font-weight:600; font-size:var(--text-base); color:var(--neutral-900); margin-bottom:var(--space-xs); }
+.tech-card__desc { font-size:var(--text-xs); color:var(--text-muted); line-height:1.6; }
+
+@media (max-width:1024px) {
+  .feature-block__grid { grid-template-columns:1fr; }
+  .feature-block__grid--reverse .feature-block__visual { order:0; }
+  .tech-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:640px) {
+  .feature-block__highlights { grid-template-columns:1fr; }
+  .tech-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">境启智创</a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">首页</a></li>
+      <li><a href="about.html" class="nav__link">项目介绍</a></li>
+      <li><a href="features.html" class="nav__link nav__link--active">核心产品</a></li>
+      <li><a href="cases.html" class="nav__link">合作案例</a></li>
+      <li><a href="team.html" class="nav__link">团队</a></li>
+      <li><a href="contact.html" class="nav__link">联系我们</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header__bg">
+    <div class="page-header__blob page-header__blob--1"></div>
+    <div class="page-header__blob page-header__blob--2"></div>
+  </div>
+  <div class="container page-header__content">
+    <p class="section__eyebrow">核心产品</p>
+    <h1 class="page-header__title">三大核心技术</h1>
+    <p class="page-header__subtitle">AI 生成 + AR 交互 + 数字变现，打通文旅全链路</p>
+  </div>
+</header>
+
+<section class="feature-block">
+  <div class="container">
+    <div class="feature-block__grid">
+      <div class="reveal">
+        <div class="feature-block__number">01</div>
+        <h2 class="feature-block__title">AI 景观生成引擎</h2>
+        <p class="feature-block__desc">上传景区现状照片，AI 在 30 秒内生成多套园艺景观改造方案，支持风格定制、成本预算和施工可行性模拟。传统设计周期从 2 周缩短至 30 分钟。</p>
+        <div class="feature-block__highlights">
+          <div class="feature-highlight"><p class="feature-highlight__label">生成速度</p><p class="feature-highlight__value">30 秒 / 方案</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">设计降本</p><p class="feature-highlight__value">70% ↓</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">风格模板</p><p class="feature-highlight__value">12+ 种</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">训练素材</p><p class="feature-highlight__value">10 万+</p></div>
+        </div>
+      </div>
+      <div class="feature-block__visual feature-block__visual--mockup reveal reveal--delay-1">
+        <div class="feature-block__visual-text">
+          <div class="feature-block__visual-icon">🏞️</div>
+          <p style="font-weight:600;color:var(--green-700);font-size:var(--text-lg);">AI 景观方案预览区</p>
+          <p style="color:var(--text-secondary);font-size:var(--text-sm);margin-top:8px;">上传原图 → 风格选择 → 生成方案</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-block feature-block--alt">
+  <div class="container">
+    <div class="feature-block__grid feature-block__grid--reverse">
+      <div class="reveal">
+        <div class="feature-block__number">02</div>
+        <h2 class="feature-block__title">AR 互动导览</h2>
+        <p class="feature-block__desc">游客打开小程序扫描园区内的标识牌或特色植物，即可触发 AR 动画，呈现植物故事、非遗传说、科普知识。支持多语种讲解，增强沉浸式游园体验。</p>
+        <div class="feature-block__highlights">
+          <div class="feature-highlight"><p class="feature-highlight__label">复游率提升</p><p class="feature-highlight__value">35% ↑</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">游客互动率</p><p class="feature-highlight__value">78%</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">支持语种</p><p class="feature-highlight__value">中文 / 英语</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">识别速度</p><p class="feature-highlight__value">&lt; 0.8s</p></div>
+        </div>
+      </div>
+      <div class="feature-block__visual feature-block__visual--mockup reveal reveal--delay-1">
+        <div class="feature-block__visual-text">
+          <div class="feature-block__visual-icon">📱</div>
+          <p style="font-weight:600;color:var(--green-700);font-size:var(--text-lg);">AR 导览小程序</p>
+          <p style="color:var(--text-secondary);font-size:var(--text-sm);margin-top:8px;">扫码 → 识别植物 → AR 故事</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-block">
+  <div class="container">
+    <div class="feature-block__grid">
+      <div class="reveal">
+        <div class="feature-block__number">03</div>
+        <h2 class="feature-block__title">数字文创商城</h2>
+        <p class="feature-block__desc">基于景区 IP 定制数字文创商品（数字明信片、AR 纪念品、限定 NFT 等），内嵌小程序商城，支持一键购买与社交分享。将景区流量转化为直接营收。</p>
+        <div class="feature-block__highlights">
+          <div class="feature-highlight"><p class="feature-highlight__label">二消占比</p><p class="feature-highlight__value">32% ↑</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">客单价</p><p class="feature-highlight__value">￥28-68</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">分享率</p><p class="feature-highlight__value">42%</p></div>
+          <div class="feature-highlight"><p class="feature-highlight__label">支持平台</p><p class="feature-highlight__value">微信小程序</p></div>
+        </div>
+      </div>
+      <div class="feature-block__visual feature-block__visual--mockup reveal reveal--delay-1">
+        <div class="feature-block__visual-text">
+          <div class="feature-block__visual-icon">🛍️</div>
+          <p style="font-weight:600;color:var(--green-700);font-size:var(--text-lg);">数字文创商城</p>
+          <p style="color:var(--text-secondary);font-size:var(--text-sm);margin-top:8px;">IP 定制 → 一键购买 → 社交裂变</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tech-stack">
+  <div class="container">
+    <div class="section__header reveal">
+      <p class="section__eyebrow">技术底座</p>
+      <h2 class="section__title">构建可靠的技术设施</h2>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card reveal">
+        <div class="tech-card__icon">🧠</div>
+        <p class="tech-card__name">Stable Diffusion</p>
+        <p class="tech-card__desc">LoRA 微调园艺景观生成模型</p>
+      </div>
+      <div class="tech-card reveal reveal--delay-1">
+        <div class="tech-card__icon">📷</div>
+        <p class="tech-card__name">ARKit / ARCore</p>
+        <p class="tech-card__desc">移动端增强现实识别与渲染</p>
+      </div>
+      <div class="tech-card reveal reveal--delay-2">
+        <div class="tech-card__icon">☁️</div>
+        <p class="tech-card__name">微信云开发</p>
+        <p class="tech-card__desc">小程序后端 + 数据库一体化</p>
+      </div>
+      <div class="tech-card reveal reveal--delay-3">
+        <div class="tech-card__icon">🔐</div>
+        <p class="tech-card__name">区块链存证</p>
+        <p class="tech-card__desc">数字文创版权保护与溯源</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div><div class="footer__brand">境启智创</div><p class="footer__slogan">以科技为引擎，助力乡村振兴</p></div>
+    <div class="footer__links">
+      <a href="about.html" class="footer__link">常德科技职业技术学院</a>
+      <a href="about.html" class="footer__link">移动应用开发专业</a>
+      <span class="footer__link">© 2026 境启智创</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+var n=document.getElementById('nav'),st=false;window.addEventListener('scroll',function(){if(!st){requestAnimationFrame(function(){n.classList.toggle('nav--scrolled',window.scrollY>40);st=false});st=true}},{passive:true});
+document.querySelectorAll('.reveal').forEach(function(el){var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('reveal--visible');o.unobserve(en.target)}})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});o.observe(el)});
+})();
+</script>
+</body>
+</html>
